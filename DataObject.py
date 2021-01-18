@@ -79,6 +79,40 @@ class Customer:
         return result
 
 
+    def get_one_Customer(self, customer: CustomerEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM customers Where customerid=%s "
+        cursor.execute(sql, ((customer.customer_id, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        customer = CustomerEntity()
+
+        customer.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return customer.to_json()
+
+
 
     def delete_Customer(self, customer: CustomerEntity):
 
@@ -212,6 +246,41 @@ class Categories:
         return result
 
 
+    def get_one_Categories(self, Categories: CategoriesEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM Categories Where categoryid=%s "
+
+        cursor.execute(sql, ((Categories.CategoryID, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        Categories = CategoriesEntity()
+
+        Categories.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return Categories.to_json()
+
+
 
     def delete_Categories(self, Categories: CategoriesEntity):
 
@@ -341,6 +410,40 @@ class Employees:
         return result
 
 
+    def get_one_Employees(self, Employees: EmployeesEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM Employees Where employeeid=%s "
+
+        cursor.execute(sql, ((Employees.EmployeeID, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        Employees = EmployeesEntity()
+
+        Employees.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return Employees.to_json()
+
 
     def delete_Employees(self, Employees: EmployeesEntity):
 
@@ -468,6 +571,40 @@ class OrderDetails:
 
         return result
 
+
+    def get_one_OrderDetails(self, OrderDetails: OrderDetailsEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM OrderDetails Where orderdetailid=%s "
+
+        cursor.execute(sql, ((OrderDetails.OrderDetailID, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        OrderDetails = OrderDetailsEntity()
+
+        OrderDetails.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return OrderDetails.to_json()
 
 
     def delete_OrderDetails(self, OrderDetails: OrderDetailsEntity):
@@ -601,6 +738,39 @@ class Orders:
         return result
 
 
+    def get_one_Orders(self, Orders: OrdersEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM Orders Where orderid=%s "
+
+        cursor.execute(sql, ((Orders.OrderID, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        Orders = OrdersEntity()
+
+        Orders.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return Orders.to_json()
 
     def delete_Orders(self, Orders: OrdersEntity):
 
@@ -731,6 +901,41 @@ class Products:
             result.append(Products.to_json())
 
         return result
+
+
+    def get_one_Products(self, Products: ProductsEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM Products Where productid=%s "
+
+        cursor.execute(sql, ((Products.ProductID, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        Products = ProductsEntity()
+
+        Products.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return Products.to_json()
 
     def delete_Products(self, Products: ProductsEntity):
 
@@ -864,6 +1069,41 @@ class Shippers:
         return result
 
 
+    def get_one_Shippers(self, Shippers: ShippersEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM Shippers Where shipperid=%s "
+
+        cursor.execute(sql, ((Shippers.ShipperID, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        Shippers = ShippersEntity()
+
+        Shippers.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return Shippers.to_json()
+
+
 
     def delete_Shippers(self, Shippers: ShippersEntity):
 
@@ -995,6 +1235,41 @@ class Suppliers:
 
         return result
 
+     
+
+    def get_one_Suppliers(self, Suppliers: SuppliersEntity):
+
+        conn = psycopg2.connect(host=self.connection_data['host'],
+
+                                port=self.connection_data['port'],
+
+                                user=self.connection_data['user'],
+
+                                password=self.connection_data['password'],
+
+                                database=self.connection_data['database'])
+
+        cursor = conn.cursor()
+
+        sql = "SELECT * FROM Suppliers Where supplierid=%s "
+
+        cursor.execute(sql, ((Suppliers.SupplierID, )))
+
+        conn.commit()
+
+        row = cursor.fetchone()
+
+        # result = {}
+
+        # for row in rows:
+
+        Suppliers = SuppliersEntity()
+
+        Suppliers.fetch_data(row)
+
+        # result.append(customer.to_json())
+
+        return Suppliers.to_json()
 
 
     def delete_Suppliers(self, Suppliers: SuppliersEntity):
