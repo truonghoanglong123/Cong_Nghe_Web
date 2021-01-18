@@ -1,16 +1,15 @@
-
 import requests
 
 # data = {}
 
-# data['customer_name'] = 'thang'
+# data['customer_name'] = 'hnasdhsakdhjaskhdjka'
 # data['contact_name'] = '123123123'
 # data['address'] = '12 afdedef'
 # data['postal_code'] = '55555'
 # data['country'] = 'dn'
 # data['city'] = 'dn'
 
-# insert = requests.post('http://192.168.1.4:5000/customer' ,json=data)
+# insert = requests.get('http://192.168.1.8:5000/products/get/23' )
 # print(insert.text)
 
 # update
@@ -49,13 +48,13 @@ import requests
 
 # Employees
 # data = {}
-# data['LastName'] = 'thao'
+# data['LastName'] = 'cc'
 # data['FirstName'] = 'hihi'
 # data['BirthDate'] = 'thao'
 # data['Photo'] = 'hihi'
 # data['Notes'] = 'thao'
 
-# insert = requests.post('http://192.168.0.116:5000/Employees', json=data)
+# insert = requests.post('http://192.168.1.8:5000/Employees', json=data)
 # print(insert.text)
 
 # data = {}
@@ -75,7 +74,7 @@ import requests
 # data = {}
 # data['OrderID'] = 1
 # data['ProductID'] = 2
-# data['Quantity'] = 'thao'
+# data['Quantity'] = 'thang'
 
 # insert = requests.post('http://192.168.1.8:5000/OrderDetails', json=data)
 # print(insert.text)
@@ -95,10 +94,10 @@ import requests
 # data = {}
 # data['CustomerID'] = 1
 # data['EmployeeID'] = 2
-# data['OrderDate'] = 'thao'
+# data['OrderDate'] = 'vuuuuuuuuuuuuuuuuuuuu'
 # data['ShipperID'] = 1
 
-# insert = requests.post('http://192.168.1.7:5000/Orders', json=data)
+# insert = requests.post('http://192.168.1.8:5000/Orders', json=data)
 # print(insert.text)
 
 # data = {}
@@ -140,9 +139,9 @@ import requests
 
 # Shippers
 # data = {}
-# data['ShipperName'] = 'thang'
+# data['ShipperName'] = 'aaaa'
 # data['Phone'] = '010101'
-# insert = requests.post('http://192.168.1.7:5000/Shippers', json=data)
+# insert = requests.post('http://192.168.1.8:5000/Shippers', json=data)
 # print(insert.text)
 
 # data = {}
@@ -157,16 +156,16 @@ import requests
 
 
 # Suppliers;
-# data = {}
-# data['SupplierName'] = 'thang'
-# data['ContactName'] = '010101'
-# data['Address'] = 'thang'
-# data['City'] = '010101'
-# data['PostalCode'] = 'thang'
-# data['Country'] = '010101'
-# data['Phone'] = 'thang'
-# insert = requests.post('http://192.168.1.6:5000/Suppliers', json=data)
-# print(insert.text)
+data = {}
+data['SupplierName'] = 'tthaaaa'
+data['ContactName'] = '010101'
+data['Address'] = 'thang'
+data['City'] = '010101'
+data['PostalCode'] = 'thang'
+data['Country'] = '010101'
+data['Phone'] = 'thang'
+insert = requests.post('http://192.168.1.8:5000/Suppliers', json=data)
+print(insert.text)
 
 # data = {}
 # data['SupplierName'] = 'cc'

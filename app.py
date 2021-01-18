@@ -115,6 +115,17 @@ def get_all_customer():
         'data': result
     })
 
+@app.route('/customer/get/<int:id>', methods=["GET"])
+
+def get_one_customer(id):
+    customer = CustomerEntity(customer_id=id)
+    c = Customer(connection_data)
+
+    result = c.get_one_Customer(customer)
+
+    return jsonify({
+        'data': result
+    })
 
 
 @app.route('/customer/<int:id>', methods=['DELETE', 'PUT'])
@@ -207,6 +218,19 @@ def get_all_Categories():
     })
 
 
+@app.route('/Categories/get/<int:id>', methods=["GET"])
+
+def get_one_categorie(id):
+    categories = CategoriesEntity(CategoryID=id)
+
+    c = Categories(connection_data)
+
+    result = c.get_one_Categories(categories)
+
+    return jsonify({
+        'data': result
+    })
+
 @app.route('/Categories/<int:id>', methods=['DELETE', 'PUT'])
 
 def delete_category_by_id(id):
@@ -292,6 +316,19 @@ def get_all_Employees():
     })
 
 
+@app.route('/Employees/get/<int:id>', methods=["GET"])
+
+def get_one_employee(id):
+    employees = EmployeesEntity(EmployeeID=id)
+
+    c = Employees(connection_data)
+
+    result = c.get_one_Employees(employees)
+
+    return jsonify({
+        'data': result
+    })
+
 @app.route('/Employees/<int:id>', methods=['DELETE', 'PUT'])
 
 def delete_employee_by_id(id):
@@ -373,6 +410,18 @@ def get_all_OrderDetails():
         'data': result
     })
 
+@app.route('/OrderDetails/get/<int:id>', methods=["GET"])
+
+def get_one_orderDetail(id):
+    orderDetail = OrderDetailsEntity(OrderDetailID=id)
+
+    c = OrderDetails(connection_data)
+
+    result = c.get_one_OrderDetails(orderDetail)
+
+    return jsonify({
+        'data': result
+    })
 
 @app.route('/OrderDetails/<int:id>', methods=['DELETE', 'PUT'])
 
@@ -453,6 +502,18 @@ def get_all_Orders():
         'data': result
     })
 
+@app.route('/Orders/get/<int:id>', methods=["GET"])
+
+def get_one_order(id):
+    order = OrdersEntity(OrderID=id)
+
+    c = Orders(connection_data)
+
+    result = c.get_one_Orders(order)
+
+    return jsonify({
+        'data': result
+    })
 
 @app.route('/Orders/<int:id>', methods=['DELETE', 'PUT'])
 
@@ -536,6 +597,19 @@ def get_all_Products():
     })
 
 
+@app.route('/products/get/<int:id>', methods=["GET"])
+
+def get_one_product(id):
+    products = ProductsEntity(ProductID=id)
+
+    c = Products(connection_data)
+
+    result = c.get_one_Products(products)
+
+    return jsonify({
+        'data': result
+    })
+
 @app.route('/Products/<int:id>', methods=['DELETE', 'PUT'])
 
 def delete_Products_by_id(id):
@@ -612,6 +686,20 @@ def get_all_Shippers():
     c = Shippers(connection_data)
 
     result = c.get_all_Shippers()
+
+    return jsonify({
+        'data': result
+    })
+
+
+@app.route('/Shippers/get/<int:id>', methods=["GET"])
+
+def get_one_shipper(id):
+    shipper = ShippersEntity(ShipperID=id)
+
+    c = Shippers(connection_data)
+
+    result = c.get_one_Shippers(shipper)
 
     return jsonify({
         'data': result
@@ -696,6 +784,19 @@ def get_all_Suppliers():
         'data': result
     })
 
+
+@app.route('/Suppliers/get/<int:id>', methods=["GET"])
+
+def get_one_supplier(id):
+    supplier = SuppliersEntity(SupplierID=id)
+
+    c = Suppliers(connection_data)
+
+    result = c.get_one_Suppliers(supplier)
+
+    return jsonify({
+        'data': result
+    })
 
 @app.route('/Suppliers/<int:id>', methods=['DELETE', 'PUT'])
 
